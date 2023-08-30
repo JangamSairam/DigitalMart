@@ -1,0 +1,26 @@
+
+
+<section >
+    <div class="container py-5 bg-light">
+        <button class="btn btn-success mb-3" routerLink="/add-category">New Category Entry</button>
+        <table class="table table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Category Add</th>
+                <th scope="col">Edit</th>
+                <th scope="col">delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let category of getCategories()">
+                <th scope="row">{{category.Id}}</th>
+                <td>{{category.Name}}</td>
+               <td><a class="btn btn-warning " routerLink="/edit-category/{{category.Id}}">Edit</a></td>
+                <td><a class="btn btn-danger " (click)="removeCategory(category.Id)">Delete</a></td>
+              </tr>
+            </tbody>
+          </table>
+        
+    </div>
+</section>

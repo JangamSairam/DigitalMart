@@ -1,0 +1,38 @@
+<table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Order date</th>
+        <th scope="col">Total amount</th>
+        <th scope="col">Order Detail</th>
+        <th scope="col">Transactions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of getOrders()">
+        <th scope="row">{{order.Id}}</th>
+        <td>{{order.OrderDate | date:'fullDate'}}</td>
+        <td>{{order.TotalPrice}}</td>
+        <td><a routerLink="/profile/order-history/order-detail/{{order.Id}}">View details</a></td>
+        <td><button type="button"
+            class="btn btn-outline-danger btn-sm">Cancel Order</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tabs-1" role="tabpanel">
+      <div class="product__details__tab__desc">
+        <h6>About Order Processes</h6>
+       <p>A product demo is a presentation of the value of your product or service to a current or prospective customer. 
+          It typically involves a demonstration of core features and capabilities.
+          The primary purpose of the demo is to close a deal.</p>     
+  
+          <p>A product demonstration (or "demo" for short) is a promotion
+             where a product is demonstrated to potential customers. 
+             The goal is to introduce customers to the product in hopes of getting 
+             them to purchase that item.</p>
+      </div>
+    </div>
+  
+  </div>
+  
